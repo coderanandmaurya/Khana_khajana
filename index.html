@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Assistant Chatbot</title>
 
     <style>
@@ -10,37 +10,68 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f7f7f7;
+            background: #fafafa;
         }
 
         header {
             background: #ff7043;
             color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+
+        .banner {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .content {
-            padding: 20px;
             text-align: center;
-            margin-top: 50px;
+            padding: 30px;
         }
 
         .content p {
             font-size: 18px;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
+<!-- Header -->
 <header>
-    🍽️ Food Assistant Chatbot
+    <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Food Logo">
+    <h1>Food Assistant Chatbot</h1>
 </header>
 
+<!-- Banner Image -->
+<div class="banner">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Delicious Food Banner">
+</div>
+
+<!-- Text Content -->
 <div class="content">
-    <p>Welcome! Click the chat icon below to talk to your Food Assistant.</p>
+    <p>Welcome! Click the chat icon below to talk to your Food Assistant 🤖🍽️</p>
 </div>
 
 <!-- IBM Watson Assistant Chat Script -->
@@ -52,10 +83,10 @@
     onLoad: async (instance) => { await instance.render(); }
   };
   setTimeout(function(){
-    const t = document.createElement('script');
-    t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" 
-            + (window.watsonAssistantChatOptions.clientVersion || 'latest') 
-            + "/WatsonAssistantChatEntry.js";
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" 
+          + (window.watsonAssistantChatOptions.clientVersion || 'latest') 
+          + "/WatsonAssistantChatEntry.js";
     document.head.appendChild(t);
   });
 </script>
